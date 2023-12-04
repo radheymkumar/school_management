@@ -1,0 +1,5 @@
+name: School Management System
+description: 'School management system drupal custom module.'
+type: module
+core_version_requirement: ^9 || ^10
+package: SMS System

@@ -1,0 +1,8 @@
+uuid: 7c6caa72-9439-464d-bc3a-398e67ba5b55
+langcode: en
+status: true
+dependencies: {  }
+name: Class
+vid: class
+description: 'School student class'
+weight: 0

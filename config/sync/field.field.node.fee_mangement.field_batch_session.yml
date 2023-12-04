@@ -1,0 +1,29 @@
+uuid: acf72dd5-1858-4d45-afd2-965e4aa68615
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_batch_session
+    - node.type.fee_mangement
+    - taxonomy.vocabulary.batch_session
+id: node.fee_mangement.field_batch_session
+field_name: field_batch_session
+entity_type: node
+bundle: fee_mangement
+label: 'Batch Session'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      batch_session: batch_session
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

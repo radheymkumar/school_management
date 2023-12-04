@@ -1,0 +1,10 @@
+uuid: 38808ee9-5499-42f4-a8bd-d6f8c7ca1773
+langcode: en
+status: true
+dependencies: {  }
+id: fee_details
+label: 'Fee Details'
+icon_uuid: null
+icon_default: null
+description: 'Manage fee - Data, Amount, Slip'
+behavior_plugins: {  }

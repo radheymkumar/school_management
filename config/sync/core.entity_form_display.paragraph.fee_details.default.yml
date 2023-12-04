@@ -1,0 +1,41 @@
+uuid: 9ad888de-cdec-411d-a269-4d279a6b74a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fee_details.field_amount
+    - field.field.paragraph.fee_details.field_date
+    - field.field.paragraph.fee_details.field_slip_no_comment
+    - paragraphs.paragraphs_type.fee_details
+  module:
+    - datetime
+id: paragraph.fee_details.default
+targetEntityType: paragraph
+bundle: fee_details
+mode: default
+content:
+  field_amount:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_slip_no_comment:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

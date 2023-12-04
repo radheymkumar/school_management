@@ -1,0 +1,114 @@
+uuid: 6e40afb7-cd25-4b05-8429-61e49359e34d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student_information.body
+    - field.field.node.student_information.field_batch_session
+    - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_gender
+    - field.field.node.student_information.field_image
+    - field.field.node.student_information.field_mobile_no
+    - field.field.node.student_information.field_mother_s_name
+    - field.field.node.student_information.field_student_address
+    - field.field.node.student_information.field_student_name
+    - image.style.wide
+    - node.type.student_information
+  module:
+    - address
+    - image
+    - options
+    - text
+    - user
+id: node.student_information.default
+targetEntityType: node
+bundle: student_information
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_batch_session:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_class:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_father_s_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_gender:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_mobile_no:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_mother_s_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_student_address:
+    type: address_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_student_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

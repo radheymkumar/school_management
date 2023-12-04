@@ -1,0 +1,19 @@
+uuid: 656750d2-7f6e-47b9-91c2-1bc16bb72694
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slip_no_comment
+    - paragraphs.paragraphs_type.fee_details
+id: paragraph.fee_details.field_slip_no_comment
+field_name: field_slip_no_comment
+entity_type: paragraph
+bundle: fee_details
+label: 'Slip No / Comment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

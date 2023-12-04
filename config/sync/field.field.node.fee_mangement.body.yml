@@ -1,0 +1,24 @@
+uuid: 8f2f0653-add2-45db-b01f-7bf524c90429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.fee_mangement
+  module:
+    - text
+id: node.fee_mangement.body
+field_name: body
+entity_type: node
+bundle: fee_mangement
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

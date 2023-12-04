@@ -1,0 +1,60 @@
+uuid: 308a5446-5dfa-4ca0-bea2-930e6730e759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.class.field_class_fee
+    - field.field.taxonomy_term.class.field_subject
+    - taxonomy.vocabulary.class
+  module:
+    - path
+    - text
+id: taxonomy_term.class.default
+targetEntityType: taxonomy_term
+bundle: class
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_class_fee:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_subject:
+    type: options_buttons
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: 37c0f084-1896-457e-bc86-b570132e5d76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fee_deposit
+    - node.type.fee_mangement
+id: node.fee_mangement.field_fee_deposit
+field_name: field_fee_deposit
+entity_type: node
+bundle: fee_mangement
+label: 'Fee Deposit'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

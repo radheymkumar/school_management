@@ -1,0 +1,29 @@
+uuid: 7cf580cc-ab08-4e7a-8046-3e9e706d9c83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_subject
+    - taxonomy.vocabulary.class
+    - taxonomy.vocabulary.subject
+id: taxonomy_term.class.field_subject
+field_name: field_subject
+entity_type: taxonomy_term
+bundle: class
+label: Subject
+description: 'Choose class subject'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subject: subject
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

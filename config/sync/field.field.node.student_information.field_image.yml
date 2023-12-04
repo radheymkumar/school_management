@@ -1,0 +1,38 @@
+uuid: 79b3b87e-dcb2-477e-8566-02d137ea418d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - node.type.student_information
+  module:
+    - image
+id: node.student_information.field_image
+field_name: field_image
+entity_type: node
+bundle: student_information
+label: Image
+description: 'Upload image size 400*400px'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: student-images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ab9b8c39-a6c2-4217-a902-7631c6ff7e9a
+    alt: 'Default Image'
+    title: 'Default Image'
+    width: 800
+    height: 600
+field_type: image

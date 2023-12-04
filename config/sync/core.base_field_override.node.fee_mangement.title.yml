@@ -1,0 +1,18 @@
+uuid: 5c7a1e1b-b3ef-4042-a82e-d40ba10f8f36
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.fee_mangement
+id: node.fee_mangement.title
+field_name: title
+entity_type: node
+bundle: fee_mangement
+label: 'Fee System ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

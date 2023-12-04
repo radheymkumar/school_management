@@ -1,0 +1,22 @@
+uuid: fea9e7af-22d4-474b-8662-21a0b350eb7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: batch_session
+label: 'Batch Session'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/session/[term:name]'
+selection_criteria:
+  e823b8fd-5489-44af-a6e9-ee3014b574ec:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: e823b8fd-5489-44af-a6e9-ee3014b574ec
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      batch_session: batch_session
+selection_logic: and
+weight: -5
+relationships: {  }

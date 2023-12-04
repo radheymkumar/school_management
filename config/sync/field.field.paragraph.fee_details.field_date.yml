@@ -1,0 +1,21 @@
+uuid: 56952173-2571-40f0-ad6c-50363f5e8d34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.fee_details
+  module:
+    - datetime
+id: paragraph.fee_details.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: fee_details
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

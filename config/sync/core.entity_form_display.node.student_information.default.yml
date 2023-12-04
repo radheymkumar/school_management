@@ -1,0 +1,201 @@
+uuid: 15ba9a4d-8af4-415e-a349-de11f1b52697
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.student_information.body
+    - field.field.node.student_information.field_batch_session
+    - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_gender
+    - field.field.node.student_information.field_image
+    - field.field.node.student_information.field_mobile_no
+    - field.field.node.student_information.field_mother_s_name
+    - field.field.node.student_information.field_student_address
+    - field.field.node.student_information.field_student_name
+    - image.style.thumbnail
+    - node.type.student_information
+  module:
+    - address
+    - field_group
+    - image
+    - path
+third_party_settings:
+  field_group:
+    group_student_information:
+      children:
+        - field_student_name
+        - field_class
+        - field_mobile_no
+        - field_gender
+        - field_image
+        - field_student_address
+      label: 'Student Information'
+      region: content
+      parent_name: group_wrapper
+      weight: 2
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+        direction: vertical
+        width_breakpoint: 640
+        open: false
+        weight: 0
+    group_wrapper:
+      children:
+        - group_student_information
+        - group_parents_information
+      label: Wrapper
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        direction: vertical
+        width_breakpoint: 640
+    group_parents_information:
+      children:
+        - field_father_s_name
+        - field_mother_s_name
+      label: 'Parents Information'
+      region: content
+      parent_name: group_wrapper
+      weight: 3
+      format_type: tab
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+id: node.student_information.default
+targetEntityType: node
+bundle: student_information
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_batch_session:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_class:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_father_s_name:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_gender:
+    type: options_select
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 18
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_mobile_no:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_mother_s_name:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_student_address:
+    type: address_default
+    weight: 19
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_student_name:
+    type: string_textfield
+    weight: 13
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true

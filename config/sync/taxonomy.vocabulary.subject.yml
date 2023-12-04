@@ -1,0 +1,8 @@
+uuid: 40013eb5-75ce-4dd4-a029-28646cfa4526
+langcode: en
+status: true
+dependencies: {  }
+name: Subject
+vid: subject
+description: 'Student subject name'
+weight: 0

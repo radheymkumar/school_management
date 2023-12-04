@@ -1,0 +1,29 @@
+uuid: 331ae0f5-c790-4b11-b41e-da1481f6a09e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_student_reg_id
+    - node.type.fee_mangement
+    - node.type.student_information
+id: node.fee_mangement.field_student_reg_id
+field_name: field_student_reg_id
+entity_type: node
+bundle: fee_mangement
+label: 'Student Reg ID'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      student_information: student_information
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

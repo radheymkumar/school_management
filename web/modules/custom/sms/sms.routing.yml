@@ -1,0 +1,7 @@
+sms.settings:
+  path: '/admin/sms/school-settings'
+  defaults:
+    _form: 'Drupal\sms\Form\SmsSettings'
+    _title: SMS Settings
+  requirements:
+    _permission: 'administer site configuration'

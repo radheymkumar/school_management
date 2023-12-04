@@ -1,0 +1,60 @@
+uuid: 09a31e64-a0ce-4b0d-bccb-761ff0b891d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.student_information.body
+    - field.field.node.student_information.field_batch_session
+    - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_gender
+    - field.field.node.student_information.field_image
+    - field.field.node.student_information.field_mobile_no
+    - field.field.node.student_information.field_mother_s_name
+    - field.field.node.student_information.field_student_address
+    - field.field.node.student_information.field_student_name
+    - image.style.medium
+    - node.type.student_information
+  module:
+    - image
+    - text
+    - user
+id: node.student_information.teaser
+targetEntityType: node
+bundle: student_information
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_batch_session: true
+  field_class: true
+  field_father_s_name: true
+  field_gender: true
+  field_mobile_no: true
+  field_mother_s_name: true
+  field_student_address: true
+  field_student_name: true

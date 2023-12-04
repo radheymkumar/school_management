@@ -1,0 +1,19 @@
+uuid: 437a54f4-26d3-4e33-981a-611575604823
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_class_fee
+    - taxonomy.vocabulary.class
+id: taxonomy_term.class.field_class_fee
+field_name: field_class_fee
+entity_type: taxonomy_term
+bundle: class
+label: 'Class Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

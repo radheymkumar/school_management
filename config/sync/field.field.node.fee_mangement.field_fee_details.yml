@@ -1,0 +1,31 @@
+uuid: df86af01-6830-4110-814f-7a747a6c44aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fee_details
+    - node.type.fee_mangement
+    - paragraphs.paragraphs_type.fee_details
+  module:
+    - entity_reference_revisions
+id: node.fee_mangement.field_fee_details
+field_name: field_fee_details
+entity_type: node
+bundle: fee_mangement
+label: 'Fee Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fee_details: fee_details
+    negate: 0
+    target_bundles_drag_drop:
+      fee_details:
+        weight: 2
+        enabled: true
+field_type: entity_reference_revisions

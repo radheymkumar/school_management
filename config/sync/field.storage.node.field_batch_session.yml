@@ -1,0 +1,20 @@
+uuid: cf1b88b5-3430-4b7f-aedc-0b0d307b43b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_batch_session
+field_name: field_batch_session
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

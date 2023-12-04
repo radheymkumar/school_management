@@ -1,0 +1,17 @@
+uuid: 96e06edc-ef57-4d8a-bf44-ff6f56b261ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Fee Mangement'
+type: fee_mangement
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

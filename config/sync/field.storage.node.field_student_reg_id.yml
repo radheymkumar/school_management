@@ -1,0 +1,19 @@
+uuid: b6521de1-1e9f-496b-8097-10abb54b42da
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_student_reg_id
+field_name: field_student_reg_id
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

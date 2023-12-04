@@ -1,0 +1,17 @@
+uuid: f5d1770b-2359-4ea3-8d2f-26d76463d550
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Student Information'
+type: student_information
+description: 'School student information deatils.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

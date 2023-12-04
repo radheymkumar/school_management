@@ -1,0 +1,8 @@
+uuid: 9d61b2ea-06ac-4608-8b64-839ccf64ec19
+langcode: en
+status: true
+dependencies: {  }
+name: 'Batch Session'
+vid: batch_session
+description: ''
+weight: 0
