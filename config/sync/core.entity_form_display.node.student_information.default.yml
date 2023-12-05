@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.student_information.body
     - field.field.node.student_information.field_batch_session
     - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_class_fee
     - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_fee_commitment
     - field.field.node.student_information.field_gender
     - field.field.node.student_information.field_image
     - field.field.node.student_information.field_mobile_no
@@ -26,6 +28,8 @@ third_party_settings:
       children:
         - field_student_name
         - field_class
+        - field_class_fee
+        - field_fee_commitment
         - field_mobile_no
         - field_gender
         - field_image
@@ -96,9 +100,17 @@ content:
     third_party_settings: {  }
   field_class:
     type: options_select
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_class_fee:
+    type: string_textfield
+    weight: 15
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_father_s_name:
     type: string_textfield
@@ -108,15 +120,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_fee_commitment:
+    type: string_textfield
+    weight: 16
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_gender:
     type: options_select
-    weight: 17
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 18
+    weight: 19
     region: content
     settings:
       progress_indicator: throbber
@@ -124,7 +144,7 @@ content:
     third_party_settings: {  }
   field_mobile_no:
     type: string_textfield
-    weight: 16
+    weight: 17
     region: content
     settings:
       size: 60
@@ -140,7 +160,7 @@ content:
     third_party_settings: {  }
   field_student_address:
     type: address_default
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

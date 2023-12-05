@@ -1,0 +1,19 @@
+uuid: 4d9fe9d7-5c30-4a1c-88ba-e262f5e22e25
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_class_fee
+    - node.type.student_information
+id: node.student_information.field_class_fee
+field_name: field_class_fee
+entity_type: node
+bundle: student_information
+label: 'Class Fee'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,4 +1,4 @@
 services:
   sms.service:
     class: Drupal\sms\Service\SmsService
-    arguments: ['@current_user']
+    arguments: ['@current_user','@database']

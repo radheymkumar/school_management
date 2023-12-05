@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.student_information.body
     - field.field.node.student_information.field_batch_session
     - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_class_fee
     - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_fee_commitment
     - field.field.node.student_information.field_gender
     - field.field.node.student_information.field_image
     - field.field.node.student_information.field_mobile_no
@@ -52,7 +54,9 @@ content:
 hidden:
   field_batch_session: true
   field_class: true
+  field_class_fee: true
   field_father_s_name: true
+  field_fee_commitment: true
   field_gender: true
   field_mobile_no: true
   field_mother_s_name: true

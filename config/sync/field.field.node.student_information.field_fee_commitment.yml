@@ -1,0 +1,19 @@
+uuid: 1e60caf8-1ee5-4e4e-9a9b-60113edbb55b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fee_commitment
+    - node.type.student_information
+id: node.student_information.field_fee_commitment
+field_name: field_fee_commitment
+entity_type: node
+bundle: student_information
+label: 'Fee Commitment'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

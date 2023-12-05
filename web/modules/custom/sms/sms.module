@@ -56,19 +56,32 @@ function sms_toolbar() {
 */
 function sms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   //dump(\Drupal::service('sms.service')->getCurrentUser());
-  
-  $student_information_new = ['node_student_information_form'];
-  if (in_array($form_id, $student_information_new)) {
-    $form['#validate'][] = 'unique_title_validate_handler';
-    //array_unshift($form['actions']['submit']['#submit'], 'studentInformation_submit_handler'); 
-    $form['actions']['submit']['#submit'][] = 'studentInformation_submit_handler'; 
+  if (in_array($form_id, ['node_student_information_form','node_student_information_edit_form'])) {
+
+    $form['field_class_fee']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
+
+    $student_information_new = ['node_student_information_form'];
+    if (in_array($form_id, $student_information_new)) {
+      $form['#validate'][] = 'unique_title_validate_handler';
+      //array_unshift($form['actions']['submit']['#submit'], 'studentInformation_submit_handler'); 
+      $form['actions']['submit']['#submit'][] = 'studentInformation_submit_handler'; 
+      $form['field_fee_commitment']['widget'][0]['value']['#default_value'] = 0;
+      $form['field_class']['widget']['#ajax'] = [
+        'callback' => '_getClassFeeAmount',
+        'event' => 'change',
+        'wrapper' => 'edit-field-class-fee-0-value',
+      ];
+    }
+
+    $student_information_edit = ['node_student_information_edit_form'];
+    if (in_array($form_id, $student_information_edit)) {
+      $form['title']['#disabled'] = 'disabled';
+      $form['field_fee_commitment']['widget']['#disabled'] = TRUE;
+      //$form['actions']['submit']['#submit'][] = 'studentInformation_submit_handler'; 
+    }
   }
 
-  $student_information_edit = ['node_student_information_edit_form'];
-  if (in_array($form_id, $student_information_edit)) {
-    $form['title']['#disabled'] = 'disabled';
-    //$form['actions']['submit']['#submit'][] = 'studentInformation_submit_handler'; 
-  }
+  
 
   if (in_array($form_id, ['node_fee_mangement_form','node_fee_mangement_edit_form'])) {
 
@@ -77,8 +90,8 @@ function sms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     //$form['field_student_reg_id']['widget']['#disabled'] = TRUE;
     $form['field_class']['widget']['#disabled'] = TRUE;
     $form['field_batch_session']['widget']['#disabled'] = TRUE;
-    //$form['field_class_fee']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
-    $form['field_class_fee']['widget']['#disabled'] = TRUE;
+    $form['field_class_fee']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
+    //$form['field_class_fee']['widget']['#disabled'] = TRUE;
     $form['field_fee_deposit']['widget']['#disabled'] = TRUE;
     $form['field_fee_due']['widget']['#disabled'] = TRUE;
     
@@ -120,6 +133,7 @@ function unique_title_validate_handler($form, FormStateInterface $form_state) {
 */
 function studentInformation_submit_handler($form, FormStateInterface $form_state) {
   $values = $form_state->getValues();
+ // dump($values); die;
   $system_student_nid = $values['nid'];
   $class = $values['field_class'][0]['target_id'];
   $reg_id = $values['title'][0]['value'];
@@ -127,18 +141,25 @@ function studentInformation_submit_handler($form, FormStateInterface $form_state
   // Class fee value.
   $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($class);
   $classFee = $term->field_class_fee->value;
+  $feeCommitment = $values['field_fee_commitment'][0]['value'];
+  $paidFee = ((int)$feeCommitment > 0 ) ? (int)$feeCommitment : $classFee;
+  //dump($paidFee);die;
+  $feeDue = $paidFee;
   // Create fee statement new entity.
+  $smsService = \Drupal::service('sms.service');
   $node = \Drupal::entityTypeManager()->getStorage('node')->create([
     'type' => 'fee_mangement',
     'title' => 'RegID:'.$reg_id.'&Class:'.$class.'&Session:'.$batch_session.'&Sid:'.$system_student_nid,
     'langcode' => 'en',
-    'uid' => \Drupal::currentUser()->id(),
+    'uid' => 1, //$smsService->getCurrentUser(),
     'status' => 1,
     'field_student_reg_id' => $system_student_nid,
     'field_class' => $class,
     'field_batch_session' => $batch_session,
     'field_class_fee' => $classFee,
-    'field_fee_commitment' => 0,
+    'field_fee_commitment' => $feeCommitment,
+    'field_fee_deposit' => '0',
+    'field_fee_due' => $feeDue,
   ]);
   $node->save();
 

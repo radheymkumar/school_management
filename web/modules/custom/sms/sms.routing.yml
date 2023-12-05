@@ -5,3 +5,18 @@ sms.settings:
     _title: SMS Settings
   requirements:
     _permission: 'administer site configuration'
+
+sms.add_fee:
+  path: '/admin/sms/fee-add'
+  defaults:
+    _form: 'Drupal\sms\Form\AddFeeForm'
+    _title: Add Student Fee
+  requirements:
+    _permission: 'administer site configuration'
+
+sms.student_list_autocomplete:
+  path: '/autocomplete/get-student-list'
+  defaults:
+    _controller: 'Drupal\sms\Form\AddFeeForm::getStudentList_Autocomplete_Json'
+  requirements:
+    _permission: 'administer site configuration'

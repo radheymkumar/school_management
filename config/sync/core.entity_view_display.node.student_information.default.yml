@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.student_information.body
     - field.field.node.student_information.field_batch_session
     - field.field.node.student_information.field_class
+    - field.field.node.student_information.field_class_fee
     - field.field.node.student_information.field_father_s_name
+    - field.field.node.student_information.field_fee_commitment
     - field.field.node.student_information.field_gender
     - field.field.node.student_information.field_image
     - field.field.node.student_information.field_mobile_no
@@ -49,6 +51,14 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
+  field_class_fee:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
   field_father_s_name:
     type: string
     label: above
@@ -56,6 +66,14 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_fee_commitment:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_gender:
     type: list_default
